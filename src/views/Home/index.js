@@ -38,12 +38,16 @@ class Home  extends Component {
     // console.log(result.length);
 
     const factorial = _.memoize(n => n === 0 ? 1 :(n * factorial(n - 1)))
+    const factorial2 = (n, current = 1) => n === 1 ? current : factorial2(n - 1, n * current);
     console.time('1');
     factorial(100)
     console.timeEnd('1')
     console.time('s');
     factorial(99)
     console.timeEnd('s')
+    console.time('factorial2');
+    factorial2(100)
+    console.timeEnd('factorial2')
   }
   fetchD = () => {
     const { getAllCities } = this.props

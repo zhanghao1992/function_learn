@@ -1,7 +1,14 @@
+/*
+ * @Author: zhanghao23
+ * @LastEditors: zhanghao23
+ * @Description: file content
+ */
 import React, {Component} from 'react'
 import { Button } from 'antd'
 import {connect} from 'dva';
 
+const _ = require('lodash');
+const R = require('ramda');
 const mapStateToProps = (state) => {
   const { app, loading } = state
   return {
@@ -12,8 +19,32 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     getAllCities: () => dispatch({ type: 'app/save' })
 })
+
 @connect(mapStateToProps, mapDispatchToProps)
 class Home  extends Component {
+  componentDidMount() {
+    let square = x => Math.pow(x, 2);
+    square = R.compose(R.tap(() => console.log("maping")), square)
+    let isEven = x => x % 2 === 0;
+    isEven = R.compose(R.tap(() => console.log("then filter")), isEven)
+    const numbers = _.range(200)
+    const result = _.chain(numbers)
+                    .map(square)
+                    .filter(isEven)
+                    .take(3)
+                    .value()
+
+    // console.log(result);
+    // console.log(result.length);
+
+    const factorial = _.memoize(n => n === 0 ? 1 :(n * factorial(n - 1)))
+    console.time('1');
+    factorial(100)
+    console.timeEnd('1')
+    console.time('s');
+    factorial(99)
+    console.timeEnd('s')
+  }
   fetchD = () => {
     const { getAllCities } = this.props
     getAllCities()

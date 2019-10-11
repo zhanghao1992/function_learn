@@ -18,6 +18,11 @@ const routeConfig = [
     component: () => import('../views/Home'),
   },
   {
+    id:'Tool',
+    path: '/tool',
+    component: () => import('../views/Tool'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

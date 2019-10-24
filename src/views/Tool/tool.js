@@ -80,6 +80,38 @@ const reduce = (arr, fn, o) => {
     return r
 }
 
+const curry = (fn) => {
+    if(typeof fn !== 'function') {
+        throw new Error('No function provided')
+    }
+    return function curriedFn(...args) {
+        if(args.length < fn.length) {
+            return function() {
+                return curriedFn(...args, ...arguments)
+            }
+        }
+        return fn(...args)
+    }
+}
+
+const partial = function(fn, ...partialArgs) {
+    let args = partialArgs
+    return function(...fullArgs) {
+        let arg = 0
+        for (let i = 0; i < args.length && arg < fullArgs.length; i++) {
+            if(args[i] === undefined) {
+                args[i] = fullArgs[arg++]
+            }
+        }
+        return fn.apply(null, args)
+    }
+}
+
+const composeN = (...fns) => 
+                (value) => reduce(fns.reverse(),(acc, fn) => fn(acc) ,value)
+
+const pipe = (...fns) => 
+                (value) => reduce(fns,(acc, fn) => fn(acc) ,value)
 export {
     forEach,
     map,
@@ -89,5 +121,9 @@ export {
     once,
     memoized,
     concatAll,
-    reduce
+    reduce, 
+    curry,
+    partial,
+    composeN,
+    pipe
 }

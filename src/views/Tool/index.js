@@ -4,7 +4,7 @@
  * @Description: memoize和尾递归优化性能
  */
 import React, {Component} from 'react'
-import { forEach, filter, map, sort, unary, once, memoized, concatAll, reduce } from './tool.js'
+import { forEach, filter, map, sort, unary, once, memoized, concatAll, reduce, curry, partial, composeN } from './tool.js'
 import { Button } from 'antd'
 
 const pay = once(() => {
@@ -22,7 +22,14 @@ class Tool  extends Component {
       const d = reduce(arr, (result, current) => {
         return result += current
       } ,10)
-      console.log(d)
+
+      const add = (x, y, z, w) => x + y + z + w
+      const curriedAdd = curry(add)
+
+      const e = curriedAdd(1, 9)(9)(1)
+
+      let delayT = partial(setTimeout, undefined, 1000)
+      delayT(()=> console.log('D Y'))
 
   }
   testHandle = () => {

@@ -48,6 +48,11 @@ class Home  extends Component {
     console.time('factorial2');
     factorial2(100)
     console.timeEnd('factorial2')
+
+
+    const LS = window.sessionStorage
+    LS.setItem('zh', 'zh11111')
+    console.log(LS.getItem('zh'));
   }
   fetchD = () => {
     const { getAllCities } = this.props

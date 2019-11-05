@@ -38,7 +38,7 @@ class Tool  extends Component {
   render() {
     return(
       <div>
-          <Button onClick={this.testHandle}>test</Button>
+          <Button onClick={this.testHandle}>Tool</Button>
       </div>
     )
   }

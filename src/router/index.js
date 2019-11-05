@@ -23,6 +23,11 @@ const routeConfig = [
     component: () => import('../views/Tool'),
   },
   {
+    id:'ReactVue',
+    path: '/react_vue',
+    component: () => import('../views/ReactVue'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

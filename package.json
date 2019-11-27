@@ -20,8 +20,7 @@
     "react-scripts": "3.1.2",
     "react-vue": "^0.0.5",
     "vue": "^2.6.10",
-    "vue-loader": "^15.7.2",
-    "vue-template-compiler": "^2.6.10",
+    "vue-seamless-scroll": "^1.1.17",
     "vuera": "^0.2.6"
   },
   "scripts": {

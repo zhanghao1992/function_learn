@@ -1,8 +1,13 @@
+<!--
+ * @Author: zhanghao23
+ * @LastEditors: zhanghao23
+ * @Description: file content
+ -->
 
 <template>
   <div>
-    <three>{{count}}</three>
-    <button @click="handleClick">+1s</button>
+    <!-- <three>{{count}}</three> -->
+    <!-- <button @click="handleClick">+1s</button> -->
     <div>{{count}}</div>
   </div>
 </template>

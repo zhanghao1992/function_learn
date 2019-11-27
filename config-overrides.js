@@ -3,26 +3,37 @@
  * @LastEditors: zhanghao23
  * @Description: file content
  */
+// const VueraBabel =require('vuera/babel');
 const { 
   override,
   addDecoratorsLegacy,
   fixBabelImports,
-  // addBabelPlugin
+  addWebpackPlugin
+  // addBabelPlugin,
+  // useBabelRc
 } = require('customize-cra');
+// const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-// const webpackConfig = require('./webpack.config')
-// const addWebpackModules = () => (config, env) => {
-//   config.module.rules.push(...webpackConfig.module.rules)
+// 添加一个module
+// const addWebpackModules = (addModule) => (config, env) => {
+//   config.module.rules.push(addModule)
 //   return config
 // }
 
 module.exports = override(
   // addWebpackModules(),
   addDecoratorsLegacy(),
-  // addBabelPlugin('vuera/babel'),
+  // useBabelRc(),
+  // addWebpackPlugin(new VueLoaderPlugin()),
   fixBabelImports('import', {
       libraryName: 'antd',
       libraryDirectory: 'es',
       style: 'css',
   }),
+  // addWebpackModules({
+  //   rules: [{
+  //     test: /\.vue$/,
+  //     loader: 'vue-loader'
+  //   }]
+  // }),
 );

@@ -18,6 +18,7 @@
     "react-dom": "^16.10.0",
     "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2",
+    "react-virtualized": "^9.21.2",
     "react-vue": "^0.0.5",
     "vue": "^2.6.10",
     "vue-seamless-scroll": "^1.1.17",

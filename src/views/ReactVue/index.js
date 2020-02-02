@@ -14,8 +14,7 @@ var MyComponent = Vue.extend({
   },
   template: `<vue-seamless-scroll :data="listData" :class-option="classOption" class="warp">
   <ul class="item">
-      <li v-for="item in listData"><span class="title" v-text="item.title"></span><span class="date"
-                                                                                        v-text="item.date"></span>
+      <li v-for="item in listData"><span class="title" v-text="item.title"></span><span class="date" v-text="item.date"></span>
       </li>
   </ul>
 </vue-seamless-scroll>`,

@@ -1,6 +1,6 @@
 /*
  * @Author: zhanghao23
- * @LastEditors: zhanghao23
+ * @LastEditors  : zhanghao23
  * @Description: file content
  */
 import React from 'react'
@@ -31,6 +31,21 @@ const routeConfig = [
     id:'ReactVue',
     path: '/react_vue',
     component: () => import('../views/ReactVue'),
+  },
+  {
+    id:'WaterMark',
+    path: '/water_mark',
+    component: () => import('../views/WaterMark'),
+  },
+  {
+    id:'PureComp',
+    path: '/pure_comp',
+    component: () => import('../views/PureComp'),
+  },
+  {
+    id:'VirtualizedList',
+    path: '/virtualized_list',
+    component: () => import('../views/VirtualizedList'),
   },
   {
     id:'NotFound',

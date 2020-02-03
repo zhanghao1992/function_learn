@@ -48,6 +48,11 @@ const routeConfig = [
     component: () => import('../views/VirtualizedList'),
   },
   {
+    id:'Rx',
+    path: '/rx',
+    component: () => import('../views/Rx'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

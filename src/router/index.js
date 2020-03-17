@@ -53,6 +53,11 @@ const routeConfig = [
     component: () => import('../views/Rx'),
   },
   {
+    id:'BaiDuMap',
+    path: '/baidu_map',
+    component: () => import('../views/BaiduMap'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }
@@ -66,13 +71,13 @@ function RootRouter ({history, app}) {
         {
           routeConfig.map(({path,...dynamics},index)=>(
             <Route
-            key={index} 
-            path={path} 
-            exact 
-            component={dynamic({
-              app,
-              ...dynamics
-            })} 
+              key={index} 
+              path={path} 
+              exact 
+              component={dynamic({
+                app,
+                ...dynamics
+              })} 
             />
             ))
           }

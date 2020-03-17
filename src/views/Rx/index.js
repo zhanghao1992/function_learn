@@ -26,38 +26,67 @@ import {
    zip,
    range,
    combineLatest,
-   race
+   race,
+   subscribe,
 } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
+// import { ajax } from 'rxjs/ajax';
 import { 
   map,
-  mapTo,
-  withLatestFrom,
-  repeatWhen,
-  take,
-  concatAll,
-  mergeAll,
+  concatMap,
+  mergeMap,
   switchMap,
-  zipAll,
-  exhaust,
-  count,
-  max,
-  reduce,
-  filter,
-  first,
-  last,
-  takeLast,
-  takeUntil,
-  takeWhile,
-  skip,
-  skipWhile,
-  skipUntil,
-  skipLast,
-  throttleTime,
-  throttle,
-  debounceTime,
-  debounce,
+  exhaustMap,
+  // mapTo,
+  // withLatestFrom,
+  // repeatWhen,
+  take,
+  // concatAll,
+  // mergeAll,
+  // zipAll,
+  // exhaust,
+  // count,
+  // max,
+  // reduce,
+  // filter,
+  // first,
+  // last,
+  // takeLast,
+  // takeUntil,
+  // takeWhile,
+  // skip,
+  // skipWhile,
+  // skipUntil,
+  // skipLast,
+  // throttleTime,
+  // throttle,
+  // debounceTime,
+  // debounce,
+  // auditTime,
+  // audit,
+  // sampleTime,
+  // sample,
+  distinct,
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
+  windowTime,
+  windowCount,
+  windowToggle,
+  windowWhen,
+  bufferTime,
+  bufferCount,
+  bufferToggle,
+  bufferWhen,
+  scan,
+  mergeScan,
+  refresh,
+  multicast,
+  refCount,
+  publish,
+  
 } from 'rxjs/operators';
+import { asap } from 'rxjs/scheduler/asap'
+import { async } from 'rxjs/scheduler/async'
+import { queue } from 'rxjs/scheduler/queue'
 
 class Rx  extends Component {
   componentDidMount() {
@@ -67,27 +96,15 @@ class Rx  extends Component {
       return interval(1000)
     }
     // const original$ = timer(0, 1000);
-    const source1$ = interval(500).pipe(
-      take(2),
-      mapTo('A')
-    )    
-    const source2$ = interval(1000).pipe(
-      take(3),
-      mapTo('B')
-    )    
-    const source3$ = interval(500).pipe(
-      take(3),
-      mapTo('C')
-    )
- 
-    const result$ = concat(source1$, source2$, source3$).pipe(
-      throttleTime(800)
-    )
-    result$.subscribe(
-      console.log,
-      err => console.log(err),
-      console.log('complete')
-    );
+    const source$ = range(1, 3, asap)
+
+    console.log('before schedule'); 
+    async.schedule(() => console.log('async')); 
+    asap.schedule(() => console.log('asap')); 
+    queue.schedule(() => console.log('queue')); 
+    console.log('after schedule');
+
+
   }
   render() {
     return(

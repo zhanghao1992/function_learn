@@ -58,6 +58,16 @@ const routeConfig = [
     component: () => import('../views/BaiduMap'),
   },
   {
+    id:'ArrowFunction',
+    path: '/arrow_function',
+    component: () => import('../views/ArrowFunction'),
+  },
+  {
+    id:'ArrayHandle',
+    path: '/array_handle',
+    component: () => import('../views/ArrayHandle'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

@@ -8,7 +8,8 @@ const {
   override,
   addDecoratorsLegacy,
   fixBabelImports,
-  addWebpackPlugin
+  addWebpackPlugin,
+  addWebpackExternals
   // addBabelPlugin,
   // useBabelRc
 } = require('customize-cra');
@@ -30,6 +31,10 @@ module.exports = override(
       libraryDirectory: 'es',
       style: 'css',
   }),
+  addWebpackExternals({
+    BMap: 'BMap',
+    BMapLib: 'BMapLib'
+  })
   // addWebpackModules({
   //   rules: [{
   //     test: /\.vue$/,

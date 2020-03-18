@@ -23,6 +23,9 @@ const {
 
 module.exports = override(
   // addWebpackModules(),
+  addWebpackExternals({
+    'BMap': 'BMap',
+  }),
   addDecoratorsLegacy(),
   // useBabelRc(),
   // addWebpackPlugin(new VueLoaderPlugin()),
@@ -31,10 +34,6 @@ module.exports = override(
       libraryDirectory: 'es',
       style: 'css',
   }),
-  addWebpackExternals({
-    BMap: 'BMap',
-    BMapLib: 'BMapLib'
-  })
   // addWebpackModules({
   //   rules: [{
   //     test: /\.vue$/,

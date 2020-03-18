@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'dva';
 import {Helmet} from 'react-helmet';
+import BMap from 'BMap'
 const mapStateToProps = (state) => {
   const { app, loading } = state
   return {
@@ -22,7 +23,6 @@ class BaiDuMap  extends Component {
   }
 
   componentDidMount() {
-    this.MP().then(BMap => {
       var map = new BMap.Map('allmap');            // 创建Map实例
       var point = new BMap.Point(116.404, 39.915); // 创建点坐标
       map.centerAndZoom(point, 15);                 
@@ -84,20 +84,6 @@ class BaiDuMap  extends Component {
       }
     }
 
-    })
-  }
-
-  MP() {
-    const ak = 'j7o3BxeRcPysz69POSPUpiNa87qZXhdw'
-    return new Promise(function(resolve, reject) {
-      var script = document.createElement('script')
-      script.type = 'text/javascript'
-      script.src = `http://api.map.baidu.com/api?v=2.0&ak=${ak}&callback=init`;
-      document.head.appendChild(script)
-      window.init = () => {
-          resolve(window.BMap)
-      }
-    })
   }
 
   render() {

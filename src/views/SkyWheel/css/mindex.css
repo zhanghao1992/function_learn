@@ -1,0 +1,304 @@
+body,
+html {
+	max-height: 736px;
+	max-width: 414px;
+}
+
+* {
+	margin: 0;
+}
+
+img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.box {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url(../img/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.content {
+	width: 100%;
+	position: relative;
+	left: 50%;
+	top: 44%;
+	transform: translate(-50%, -50%);
+}
+
+.lun {
+	width: 80%;
+	position: relative;
+	left: 50%;
+	top: 23%;
+	margin-left: -40%;
+	animation: a 40s linear infinite;
+	transform-origin: center center;
+}
+
+.lun img:nth-of-type(2) {
+	width: 30%;
+	position: absolute;
+	top: 4%;
+	left: 51%;
+	margin-left: -15%;
+	animation: b 40s linear infinite;
+	transform-origin: top center;
+}
+
+.lun img:nth-of-type(3) {
+	width: 30%;
+	position: absolute;
+	top: 49%;
+	left: -9%;
+	margin-top: -15%;
+	animation: b 40s linear infinite;
+	transform-origin: top center;
+}
+
+.lun img:nth-of-type(4) {
+	width: 30%;
+	position: absolute;
+	top: 56%;
+	right: -10%;
+	margin-top: -15%;
+	animation: b 40s linear infinite;
+	transform-origin: top center;
+}
+
+.lun img:nth-of-type(5) {
+	width: 30%;
+	position: absolute;
+	bottom: -34%;
+	left: 50%;
+	margin-left: -15%;
+	animation: b 40s linear infinite;
+	transform-origin: top center;
+}
+
+.zs1 {
+	position: absolute;
+	width: 36%;
+	top: 56%;
+	left: 50%;
+	margin-left: -18%;
+}
+
+.zs2 {
+	width: 18%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 11;
+}
+
+.star1 {
+	width: 10%;
+	position: absolute;
+	top: 2%;
+	right: 61%;
+	animation: c 1s linear infinite alternate;
+}
+
+.star2 {
+	width: 8%;
+	position: absolute;
+	top: 22%;
+	right: 0%;
+	animation: c 2s linear infinite alternate;
+}
+
+.flag1 {
+	width: 8%;
+	position: absolute;
+	bottom: 19%;
+	left: 7%;
+	animation: d 0.8s ease-in-out infinite alternate;
+}
+
+.flag2 {
+	width: 8%;
+	position: absolute;
+	bottom: 18%;
+	left: 23%;
+	animation: d 1.2s ease-in-out infinite alternate;
+}
+
+.cloud {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.ugly {
+	width: 14%;
+	position: absolute;
+	bottom: 5%;
+	right: 0%;
+	z-index: -1;
+	animation: e 1s infinite alternate;
+}
+
+@keyframes e {
+	from {
+		bottom: 8%;
+	}
+	to {
+		bottom: 5%;
+	}
+}
+
+@keyframes a {
+	form {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes b {
+	form {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(-360deg)
+	}
+}
+
+@keyframes c {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes d {
+	0%,
+	50% {
+		opacity: 0
+	}
+	100%,
+	50.1% {
+		opacity: 1
+	}
+}
+
+#mask {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+
+.cImg_box {
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: -74%;
+	margin-left: -40%;
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.cImg_box_content {
+	width: 100%;
+	background: url(../img/body.png) no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	padding-bottom: 0.7rem;
+	margin-top: -1px;
+}
+
+.cImg_box_content p {
+	color: #FFFFFF;
+	font-size: 0.6rem;
+	padding: 0.2rem 0;
+}
+
+.imageBgq {
+	margin: 0 auto;
+	width: 92%;
+	height: 6.5rem;
+	background: url(../img/imageBg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.imageBgq img {
+	margin: 0.4rem auto;
+}
+
+.cImg_box_content img {
+	width: 92%;
+	padding-top: 0.5rem;
+}
+
+.cImg_box i {
+	position: absolute;
+	top: 18%;
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.cImg_box i img {
+	transform: scale(0);
+}
+
+#close {
+	width: 1.3rem;
+	height: 1.3rem;
+	text-align: center;
+	line-height: 1.2rem;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 1px solid #f0f0f0;
+	position: absolute;
+	right: -1rem;
+	top: 3rem;
+	font-size: 0.8rem;
+	color: #f0f0f0;
+}
+
+.kscale {
+	animation: f 0.7s linear 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.ktop {
+	animation: g 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes f {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes g {
+	from {
+		top: -78%;
+	}
+	to {
+		top: 0;
+	}
+} 

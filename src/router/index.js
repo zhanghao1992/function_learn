@@ -68,6 +68,11 @@ const routeConfig = [
     component: () => import('../views/ArrayHandle'),
   },
   {
+    id:'SkyWheel',
+    path: '/sky_wheel',
+    component: () => import('../views/SkyWheel'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

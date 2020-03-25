@@ -73,6 +73,11 @@ const routeConfig = [
     component: () => import('../views/SkyWheel'),
   },
   {
+    id:'Animation',
+    path: '/animation',
+    component: () => import('../views/Animation'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

@@ -12,34 +12,34 @@ import React, {Component} from 'react'
 // import { range } from 'rxjs/observable/range'; 
 // import { generate } from 'rxjs/observable/generate'; 
 import { 
-  Observable,
-   Subject,
-   asapScheduler,
-   pipe,
-   of,
-   from,
+  // Observable,
+  //  Subject,
+  //  asapScheduler,
+  //  pipe,
+  //  of,
+  //  from,
    interval,
-   timer,
-   fromEvent,
-   concat,
-   merge,
-   zip,
+  //  timer,
+  //  fromEvent,
+  //  concat,
+  //  merge,
+  //  zip,
    range,
-   combineLatest,
-   race,
-   subscribe,
+  //  combineLatest,
+  //  race,
+  //  subscribe,
 } from 'rxjs';
 // import { ajax } from 'rxjs/ajax';
 import { 
-  map,
-  concatMap,
-  mergeMap,
-  switchMap,
-  exhaustMap,
+  // map,
+  // concatMap,
+  // mergeMap,
+  // switchMap,
+  // exhaustMap,
   // mapTo,
   // withLatestFrom,
   // repeatWhen,
-  take,
+  // take,
   // concatAll,
   // mergeAll,
   // zipAll,
@@ -65,23 +65,23 @@ import {
   // audit,
   // sampleTime,
   // sample,
-  distinct,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  windowTime,
-  windowCount,
-  windowToggle,
-  windowWhen,
-  bufferTime,
-  bufferCount,
-  bufferToggle,
-  bufferWhen,
-  scan,
-  mergeScan,
-  refresh,
-  multicast,
-  refCount,
-  publish,
+  // distinct,
+  // distinctUntilChanged,
+  // distinctUntilKeyChanged,
+  // windowTime,
+  // windowCount,
+  // windowToggle,
+  // windowWhen,
+  // bufferTime,
+  // bufferCount,
+  // bufferToggle,
+  // bufferWhen,
+  // scan,
+  // mergeScan,
+  // refresh,
+  // multicast,
+  // refCount,
+  // publish,
   
 } from 'rxjs/operators';
 import { asap } from 'rxjs/scheduler/asap'
@@ -92,11 +92,11 @@ class Rx  extends Component {
   componentDidMount() {
     // const btn = document.querySelector('#btn')
     // const source$ = fromEvent(btn, 'click')
-    const notifier = (notifica) => {
-      return interval(1000)
-    }
+    // const notifier = (notifica) => {
+    //   return interval(1000)
+    // }
     // const original$ = timer(0, 1000);
-    const source$ = range(1, 3, asap)
+    // const source$ = range(1, 3, asap)
 
     console.log('before schedule'); 
     async.schedule(() => console.log('async')); 

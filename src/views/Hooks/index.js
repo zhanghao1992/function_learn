@@ -3,22 +3,22 @@
  * @LastEditors  : zhanghao23
  * @Description: file content
  */
-import React, {useEffect, useState, useRef, useContext} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import {Button} from "antd";
 // import Child from "./Child.js"
-const colorContext = React.createContext("gray");
-const fetchData = (id) => new Promise(resolve => {
-    setTimeout(() => {
-        resolve('已经从服务器拉取列表完毕' + id)
-    }, 1000)
-})
+// const colorContext = React.createContext("gray");
+// const fetchData = (id) => new Promise(resolve => {
+//     setTimeout(() => {
+//         resolve('已经从服务器拉取列表完毕' + id)
+//     }, 1000)
+// })
 
-const Child = () => {
-    const color = useContext(colorContext);
-    return (
-        <p>{color}</p>
-    )
-}
+// const Child = () => {
+//     const color = useContext(colorContext);
+//     return (
+//         <p>{color}</p>
+//     )
+// }
 
 // 模拟componentDidUpdate
 function useUpdate(fn) {

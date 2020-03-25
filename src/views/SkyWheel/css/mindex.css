@@ -199,7 +199,7 @@ img {
 	bottom: 0;
 	top: 0;
 	background: rgba(0, 0, 0, 0.7);
-	display: none;
+	/* display: none; */
 }
 
 .cImg_box {

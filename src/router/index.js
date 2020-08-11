@@ -78,6 +78,16 @@ const routeConfig = [
     component: () => import('../views/Animation'),
   },
   {
+    id:'Big',
+    path: '/big',
+    component: () => import('../views/Big'),
+  },
+  {
+    id:'Decorate',
+    path: '/decorate',
+    component: () => import('../views/Decorate'),
+  },
+  {
     id:'NotFound',
     component: () => import('../views/NotFound'),
   }

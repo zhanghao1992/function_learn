@@ -5,5 +5,7 @@
         ],
         "@babel/preset-react"
       ],
-    "plugins": ["vuera/babel"]
+    "plugins": [
+      ["@babel/plugin-proposal-decorators", { "legacy": true }], 
+      "vuera/babel"]
   }
